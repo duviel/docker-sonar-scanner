@@ -19,14 +19,14 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 WORKDIR /root
 
-RUN curl --insecure -OL https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-2.5.1.zip
-RUN unzip sonar-scanner-2.5.1.zip
-RUN rm sonar-scanner-2.5.1.zip
+RUN curl --insecure -OL https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-2.8.zip
+RUN unzip sonar-scanner-2.8.zip
+RUN rm sonar-scanner-2.8.zip
 
-ENV SONAR_RUNNER_HOME=/root/sonar-scanner-2.5.1
-ENV PATH $PATH:/root/sonar-scanner-2.5.1/bin
+ENV SONAR_RUNNER_HOME=/root/sonar-scanner-2.8
+ENV PATH $PATH:/root/sonar-scanner-2.8/bin
 
-COPY sonar-runner.properties ./sonar-scanner-2.5.1/conf/sonar-runner.properties
+COPY sonar-runner.properties ./sonar-scanner-2.8/conf/sonar-runner.properties
 
 # Use bash if you want to run the environment from inside the shell, otherwise use the command that actually runs the underlying stuff
 #CMD /bin/bash
